@@ -2,19 +2,29 @@
     
 <head>
 
-<link href="style.css" type="text/css" rel="stylesheet">
+<!--<link href="style.css" type="text/css" rel="stylesheet">-->
+    
+<style>
+    fieldset{
+        background-color: lightyellow;
+        border: 10px solid yellow;
+        margin-bottom: 10px;
+    }
+    
+    
+</style>
     
 </head>
  
 <body>
 <h1> Please Enter Your Details For Our Dating Website!</h1>
       
-<form action="" method="post">   
+<form action="" enctype="multipart/form-data" method="post">   
     
 <fieldset>
 <legend>Your Face</legend>
 <label for="avatar"> Your Image: </label>
-<input type="file" id="avatar" name="avatar" enctype="multipart/form-data" required="True">
+<input type="file" id="avatar" name="avatar" required="True">
 <br>    
 <label for="preview">Image Preview: </label>
 <img src="" id="preview">
@@ -71,8 +81,14 @@ Poor<input type="range" id="salary" name="salary" min="0" max="100" value="50" s
 <input type="tel" id="mobile" name="mobile" ><br>    
     
 <label for="address"> Address: </label>
-<textarea> </textarea>
-<!--<input type="text" id="address" name="address" ><br>-->     
+<textarea id="address" name="address"> </textarea>
+<br>
+
+<label for="contactmethod"> Method to contact you: </label>
+<input type="checkbox" id="contactmethod" name="viaemail"> Email 
+<input type="checkbox" id="contactmethod" name="viawhatsapp"> Whatsapp 
+<input type="checkbox" id="contactmethod" name="viachat"> In-app chat <br>
+
 </fieldset>
     
     
