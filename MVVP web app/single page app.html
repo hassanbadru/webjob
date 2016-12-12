@@ -12,7 +12,7 @@
 <div class= "box-wrap">
 <nav class="navbar navbar-default">
 <ul class="nav text-center" data-bind="foreach: folders">
-    <li data-bind="text: $data,
+    <li class="nav-item" data-bind="text: $data,
                    css: {selected: $data == $root.chosenFolderId()},
                    click: $root.goToFolder"></li>
 </ul>
