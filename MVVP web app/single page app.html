@@ -2,16 +2,22 @@
 <html>
 <title> Hassan's Single Page App (MVVP) </title> 
 <head>
+<link rel="stylesheet" href="css/bootstrap.css">
 <script src="knockout-3.4.1.js"></script>    
 </head>
     
 <body>
     
 <!-- This is a *view* - HTML markup that defines the appearance of your UI -->
-<ul class="folders" data-bind="foreach: folders">
-    <li data-bind="text: $data"></li>
+<div class= "box-wrap">
+<nav class="navbar navbar-default">
+<ul class="nav text-center" data-bind="foreach: folders">
+    <li data-bind="text: $data,
+                   css: {selected: $data == $root.chosenFolderId()},
+                   click: $root.goToFolder"></li>
 </ul>
-    
+</nav>
+</div>
     
 <script>    
 // This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
@@ -19,6 +25,10 @@ function WebmailViewModel() {
     // Data
     var self = this;
     self.folders = ['Inbox', 'Archive', 'Sent', 'Spam'];
+    self.chosenFolderId = ko.observable();
+    
+    //behaviors
+    self.goToFolder = function(folder){self.chosenFolderId(folder);};
 };
 
 ko.applyBindings(new WebmailViewModel());
