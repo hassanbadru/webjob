@@ -1,8 +1,6 @@
 <html>
     
 <head>
-
-<!--<link href="style.css" type="text/css" rel="stylesheet">-->
     
 <style>
     fieldset{
@@ -23,9 +21,24 @@
         width: auto;
     }
     
-    /*.indicators{
-        text-align:center;
-    }*/
+    .labeltxt{
+        width: auto;
+        display: inline-block;
+    }
+    
+    .low{
+        background: red;
+        color: white;
+        width: 100px;
+        text-align: center;
+    }
+    
+    .high{
+        background: purple;
+        color: white;
+        width: 100px;
+        text-align: center;
+    }
     
     label:hover{
         font-size: 40px;
@@ -34,6 +47,22 @@
     input:hover{
         font-size: 40px;
     }
+    
+    .labeltxt:hover{
+        font-size: 40px;
+    }
+    
+    .avatar:hover{
+        display: inline;
+        width: 500px;
+        padding-top: 20px;
+        
+    }
+    
+    select:hover{
+        font-size: 40px;
+    }
+    
     
     textarea{
         width: 360px;
@@ -46,12 +75,12 @@
 <body>
 <h1> Please Enter Your Details For Our Dating Website!</h1>
       
-<form action="http://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" enctype="multipart/form-data" method="post">   
+<form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" enctype="multipart/form-data" method="post">   
     
 <fieldset>
 <legend>Your Face</legend>
-<label for="avatar"> Your Image: </label>
-<input type="file" id="avatar" name="avatar" required="True">
+<label for="avatar">Your Image: </label>
+<input class="avatar" type="file" id="avatar" name="avatar" required="True">
 <br>    
 <label for="preview">Image Preview: </label>
 <img id="preview">
@@ -60,12 +89,12 @@
     
 <fieldset>
 <legend>Your General Details</legend>
-<label for="name"> Name: </label>
+<label for="name">Name: </label>
 <input type="text" id="name" name="name" required="True"> <br>
     
-<label class="autow" for="gender">Gender:</label>
-<input type="radio" id="gender" name="male" >Male
-<input type="radio" id="gender" name="male" >Female<br>
+<label for="gender">Gender:</label>
+    <input type="radio" id="gender" name="male" value="Male"> <div class="labeltxt">Male</div>
+    <input type="radio" id="gender" name="male"> <div class="labeltxt">Female</div><br>
     
 <label for="age">Age:</label>
 <input type="number" id="age" name="age" required="True"> <br>
@@ -93,31 +122,31 @@
 <legend>Your Indicators</legend>
     
 
-<label for="height"> Height: </label>
-Short<input type="range" id="height" name="height" min="0" max="100" value="50" step="5"> Tall<br>
+<label for="height">Height: </label>
+<div class="labeltxt low">Short </div><input type="range" id="height" name="height" min="0" max="100" value="50" step="5"> <div class="labeltxt high">Tall</div><br>
     
-<label for="salary"> Salary: </label>
-Poor<input type="range" id="salary" name="salary" min="0" max="100" value="50" step="5">Rich<br>
+<label for="salary">Salary: </label>
+<div class="labeltxt low">Poor </div><input type="range" id="salary" name="salary" min="0" max="100" value="50" step="5"><div class="labeltxt high">Rich</div><br>
 
 </fieldset>
     
     
 <fieldset>
 <legend>Your Contact Information</legend>  
-<label for="email"> Email: </label>
+<label for="email">Email: </label>
 <input type="email" id="email" name="email" required="True"><br>    
     
-<label for="mobile"> Mobile: </label>
+<label for="mobile">Mobile: </label>
 <input type="tel" id="mobile" name="mobile" ><br>    
     
-<label for="address"> Address: </label>
+<label for="address">Address: </label>
 <textarea id="address" name="address"> </textarea>
 <br>
 
 <label class="autow" for="contactmethod"> Method to contact you: </label>
-<input type="checkbox" id="contactmethod" name="viaemail"> Email 
-<input type="checkbox" id="contactmethod" name="viawhatsapp"> Whatsapp 
-<input type="checkbox" id="contactmethod" name="viachat"> In-app chat <br>
+<input type="checkbox" id="contactmethod" name="viaemail"> <div class="labeltxt">Email </div>
+    <input type="checkbox" id="contactmethod" name="viawhatsapp">  <div class="labeltxt">Whatsapp</div>
+    <input type="checkbox" id="contactmethod" name="viachat">  <div class="labeltxt">In-app chat</div> <br>
 
 </fieldset>
     

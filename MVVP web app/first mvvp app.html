@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<title> Hassan's Knockout App</title> 
+<head>
+<script src="knockout-3.4.1.js"></script>    
+</head>
+    
+<body>
+    
+<!-- This is a *view* - HTML markup that defines the appearance of your UI -->
+<p>First name: <strong data-bind="text: firstName"></strong></p>
+<p>Last name: <strong data-bind="text: lastName"></strong></p>
+    
+<p>Full name: <strong data-bind="text: fullName"></strong></p>
+
+<p>First name: <input data-bind="value: firstName"/></p>
+<p>Last name: <input data-bind="value: lastName"/></p>
+    
+    
+<script>    
+// This is a simple *viewmodel* - JavaScript that defines the data and behavior of your UI
+function AppViewModel() {
+    this.firstName = ko.observable("Hassan");
+    this.lastName = ko.observable("Badru");
+    this.fullName = ko.computed(function(){
+    return this.firstName() + " " + this.lastName();
+    }, this);
+}
+
+// Activates knockout.js
+ko.applyBindings(new AppViewModel());
+</script>
+    
+</body>
+</html>
