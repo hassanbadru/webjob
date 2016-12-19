@@ -7,25 +7,20 @@
 <script>
 
 var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"].sort();
-var target = Math.floor(Math.random(colors.length));
+var target = Math.floor(Math.random() * colors.length);
     
 function do_game(){
-    
     
     alert("The color is: " + colors[target]);
 
     var done = false;
     while(done == false){
-        var guess = prompt("I'm thinking of one of these colors: " + "\n" + colors.join(", ") + "\n\n" + "What color am I thinking of?");
+        var guess = prompt("I'm thinking of one of these colors: " + "\n\n" + colors.join(", ") + "\n\n" + "What color am I thinking of?");
     
         if (guess == colors[target]){   
             done = true;
         }
     }
-    
-    
-    //myBody=document.getElementsByTagName("body")[0];
-    //myBody.style.background=name_of_color;
 }
     
 </script>    
