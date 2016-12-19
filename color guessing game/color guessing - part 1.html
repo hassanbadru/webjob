@@ -6,18 +6,21 @@
 <body onload= "do_game()">
 <script>
 
-var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"].sort()
-var target = Math.floor(Math.random(colors.length))
+var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"].sort();
+var target = Math.floor(Math.random(colors.length));
     
 function do_game(){
     
     
-    alert("The color is: " + colors[target])
+    alert("The color is: " + colors[target]);
 
-    var done = false
+    var done = false;
     while(done == false){
-        guess = prompt("I'm thinking of one of these colors: " + "\n" + colors.join(", ") + "\n\n" + "What color am I thinking of?")
-    break;
+        var guess = prompt("I'm thinking of one of these colors: " + "\n" + colors.join(", ") + "\n\n" + "What color am I thinking of?");
+    
+        if (guess == colors[target]){   
+            done = true;
+        }
     }
     
     
