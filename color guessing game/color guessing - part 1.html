@@ -1,0 +1,25 @@
+<html>
+<head>
+    
+</head>
+
+<body onload= "do_game()">
+<script>
+ 
+function do_game(){
+    colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+    target = Math.floor(Math.random(colors.length))
+    
+    alert("The color is: " + colors[target])
+
+    var done = false
+    while(done == false){
+        guess = prompt("I'm thinking of one of these colors: " + "\n" + colors.join(", ") + "\n\n" + "What color am I thinking of?")
+    break;
+    }
+}
+    
+</script>    
+</body>
+    
+</html>
