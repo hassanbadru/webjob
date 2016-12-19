@@ -5,10 +5,12 @@
 
 <body onload= "do_game()">
 <script>
- 
+
+var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"].sort()
+var target = Math.floor(Math.random(colors.length))
+    
 function do_game(){
-    colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
-    target = Math.floor(Math.random(colors.length))
+    
     
     alert("The color is: " + colors[target])
 
@@ -17,6 +19,10 @@ function do_game(){
         guess = prompt("I'm thinking of one of these colors: " + "\n" + colors.join(", ") + "\n\n" + "What color am I thinking of?")
     break;
     }
+    
+    
+    //myBody=document.getElementsByTagName("body")[0];
+    //myBody.style.background=name_of_color;
 }
     
 </script>    
