@@ -3,7 +3,7 @@
     
 </head>
 
-<body onload= "do_game()">
+<body onload= "do_game();">
 <script>
 
 var colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"].sort();
@@ -11,7 +11,7 @@ var target = Math.floor(Math.random() * colors.length);
     
 function do_game(){
     
-    alert("The color is: " + colors[target]);
+    alert("The color is: " + colors[target]); 
 
     var done = false;
     var count = 1;
@@ -20,9 +20,9 @@ function do_game(){
         var guess = prompt("I'm thinking of one of these colors: " + "\n\n" + colors.join(", ") + "\n\n" + "What color am I thinking of?");
         
         done = check_guess(guess, count);
-        
+         
         count++;
-    } 
+    }
 }
   
     
@@ -44,16 +44,19 @@ function check_guess(guess, count){
     }
               
     else{
-        document.getElementsByTagName("body")[0].style.backgroundColor = guess; //change background color
+        document.getElementsByTagName("body")[0].style.backgroundColor = guess; //change background color 
         
         if (count <= 1){ //to write as "guess" if singular
-            es = ""
+            var es = "";
         }
         else{ //to write as "guesses" if plural
-            es = "es"
-        }
-        alert("Congratulations! You have guessed the right color" + "\n\n" + "It took you " + count + " guess" + es + " to finish the game!" + "\n\n" + "You can see the color in the background");
+            var es = "es";
+        } 
         
+        setTimeout(congrats, 50);
+        function congrats(){
+        alert("Congratulations! You have guessed the right color" + "\n\n" + "It took you " + count + " guess" + es + " to finish the game!" + "\n\n" + "You can see the color in the background"); 
+        }
         return true;
     }
               
